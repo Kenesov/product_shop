@@ -1,0 +1,34 @@
+{
+  "appName": "Shopin",
+  "welcomeTitle": "Amazing shopping",
+  "welcomeSubtitle": "Experience a new way of shopping.",
+  "explore": "Explore",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "email": "Email",
+  "password": "Password",
+  "name": "Name",
+  "confirmPassword": "Confirm password",
+  "dontHaveAccount": "Don't have an account? Sign Up",
+  "alreadyHaveAccount": "Already have an account? Sign In",
+  "forgotPassword": "Forgot password",
+  "signInWithFacebook": "Sign in with Facebook",
+  "congratulations": "Congratulations",
+  "accountCreated": "Your account has been successfully created.",
+  "productList": "Product List",
+  "yourCart": "Your Cart",
+  "items": "{count} items",
+  "checkOut": "Check Out",
+  "addToCart": "Add to Cart",
+  "furniture": "Furniture",
+  "electronic": "Electronic",
+  "fashion": "Fashion",
+  "newCategory": "New",
+  "@items": {
+    "description": "Number of items in cart",
+    "placeholders": { "count": {} }
+  },
+  "@newCategory": {
+    "description": "New products category"
+  }
+}

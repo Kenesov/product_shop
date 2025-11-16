@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../core/colors.dart';
 import '../data/dummy_data.dart';
+import '../l10n/app_localizations.dart';
+import '../widgets/language_picker.dart';
 import '../widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,50 +13,44 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String selectedCategory = 'New';
+  String selectedCategory = 'newCategory';
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product List'),
+        title: Text(t.productList),
         actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Icon(Icons.search),
-          ),
+          LanguagePicker(),
+          SizedBox(width: 16),
         ],
         elevation: 0,
       ),
       body: Column(
         children: [
-          // Categories
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
-              children: ['New', 'Furniture', 'Electronic', 'Fashion'].map((cat) {
+              children: ['newCategory', 'furniture', 'electronic', 'fashion'].map((cat) {
                 bool isSelected = selectedCategory == cat;
                 return Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: ChoiceChip(
-                    label: Text(cat),
+                    label: Text(t.translateCategory(cat)),
                     selected: isSelected,
                     selectedColor: AppColors.primary,
                     backgroundColor: Colors.grey[200],
-                    labelStyle: TextStyle(
-                      color: isSelected ? Colors.white : Colors.black,
-                    ),
-                    onSelected: (selected) {
-                      setState(() => selectedCategory = cat);
-                    },
+                    labelStyle: TextStyle(color: isSelected ? Colors.white : Colors.black),
+                    onSelected: (_) => setState(() => selectedCategory = cat),
                   ),
                 );
               }).toList(),
             ),
           ),
           const SizedBox(height: 16),
-          // Products Grid
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.all(16),
@@ -65,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 16,
               ),
               itemCount: dummyProducts.length,
-              itemBuilder: (ctx, i) => ProductCard(product: dummyProducts[i]),
+              itemBuilder: (_, i) => ProductCard(product: dummyProducts[i]),
             ),
           ),
         ],
@@ -83,5 +79,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+}
+
+extension on AppLocalizations {
+  String translateCategory(String key) {
+    switch (key) {
+      case 'newCategory': return newCategory;
+      case 'furniture': return furniture;
+      case 'electronic': return electronic;
+      case 'fashion': return fashion;
+      default: return key;
+    }
   }
 }

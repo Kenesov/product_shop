@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/colors.dart';
+import '../l10n/app_localizations.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/primary_button.dart';
 import '../widgets/social_button.dart';
@@ -11,6 +12,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -19,58 +22,30 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              const Text(
-                'Sign In',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
-                ),
-              ),
+              Text(t.signIn, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: AppColors.textPrimary)),
               const SizedBox(height: 40),
-              const CustomTextField(hintText: 'Email'),
+              CustomTextField(hintText: t.email),
               const SizedBox(height: 16),
-              const CustomTextField(hintText: 'Password', obscureText: true),
+              CustomTextField(hintText: t.password, obscureText: true),
               const SizedBox(height: 24),
               PrimaryButton(
-                text: 'Sign In',
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (_) => const HomeScreen()),
-                        (route) => false,
-                  );
-                },
+                text: t.signIn,
+                onPressed: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const HomeScreen()), (route) => false),
               ),
               const SizedBox(height: 16),
-              SocialButton(
-                text: 'Sign in with Facebook',
-                color: AppColors.facebookBlue,
-                onPressed: () {},
-              ),
+              SocialButton(text: t.signInWithFacebook, color: AppColors.facebookBlue, onPressed: () {}),
               const SizedBox(height: 24),
               Center(
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
-                    );
-                  },
-                  child: const Text(
-                    "Don't have an account? Sign Up",
-                    style: TextStyle(color: AppColors.textPrimary),
-                  ),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterScreen())),
+                  child: Text(t.dontHaveAccount, style: const TextStyle(color: AppColors.textPrimary)),
                 ),
               ),
               const Spacer(),
               Center(
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(
-                    'Forgot password',
-                    style: TextStyle(color: AppColors.textPrimary),
-                  ),
+                  child: Text(t.forgotPassword, style: const TextStyle(color: AppColors.textPrimary)),
                 ),
               ),
             ],

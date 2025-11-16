@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import '../core/colors.dart';
+import '../l10n/app_localizations.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/primary_button.dart';
 import 'success_screen.dart';
-import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -18,42 +20,25 @@ class RegisterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              const Text(
-                'Sign Up',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
-                ),
-              ),
+              Text(t.signUp, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: AppColors.textPrimary)),
               const SizedBox(height: 40),
-              const CustomTextField(hintText: 'Name'),
+              CustomTextField(hintText: t.name),
               const SizedBox(height: 16),
-              const CustomTextField(hintText: 'Email'),
+              CustomTextField(hintText: t.email),
               const SizedBox(height: 16),
-              const CustomTextField(hintText: 'Password', obscureText: true),
+              CustomTextField(hintText: t.password, obscureText: true),
               const SizedBox(height: 16),
-              const CustomTextField(hintText: 'Confirm password', obscureText: true),
+              CustomTextField(hintText: t.confirmPassword, obscureText: true),
               const SizedBox(height: 24),
               PrimaryButton(
-                text: 'Sign Up',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const SuccessScreen()),
-                  );
-                },
+                text: t.signUp,
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SuccessScreen())),
               ),
               const SizedBox(height: 24),
               Center(
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text(
-                    'Already have an account? Sign In',
-                    style: TextStyle(color: AppColors.textPrimary),
-                  ),
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(t.alreadyHaveAccount, style: const TextStyle(color: AppColors.textPrimary)),
                 ),
               ),
             ],

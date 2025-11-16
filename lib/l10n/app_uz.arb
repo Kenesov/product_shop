@@ -1,0 +1,36 @@
+{
+  "appName": "Shopin",
+  "welcomeTitle": "Ajoyib xarid",
+  "welcomeSubtitle": "Xarid qilishning yangi usulini sinab ko‘ring.",
+  "explore": "Ko‘rib chiqish",
+  "signIn": "Kirish",
+  "signUp": "Ro‘yxatdan o‘tish",
+  "email": "Elektron pochta",
+  "password": "Parol",
+  "name": "Ism",
+  "confirmPassword": "Parolni tasdiqlang",
+  "dontHaveAccount": "Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting",
+  "alreadyHaveAccount": "Allaqachon hisobingiz bormi? Kiring",
+  "forgotPassword": "Parolni unutdingizmi",
+  "signInWithFacebook": "Facebook orqali kirish",
+  "congratulations": "Tabriklaymiz",
+  "accountCreated": "Hisobingiz muvaffaqiyatli yaratildi.",
+  "productList": "Mahsulotlar ro‘yxati",
+  "yourCart": "Sizning savatingiz",
+  "items": "{count} ta mahsulot",
+  "checkOut": "To‘lov",
+  "addToCart": "Savatga qo‘shish",
+  "furniture": "Mebel",
+  "electronic": "Elektronika",
+  "fashion": "Moda",
+  "newCategory": "Yangi",
+  "@items": {
+    "description": "Savatchadagi mahsulotlar soni",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "@newCategory": {
+    "description": "Yangi mahsulotlar kategoriyasi"
+  }
+}

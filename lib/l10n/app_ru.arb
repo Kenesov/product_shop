@@ -1,0 +1,36 @@
+{
+  "appName": "Shopin",
+  "welcomeTitle": "Удивительные покупки",
+  "welcomeSubtitle": "Испытайте новый способ шопинга.",
+  "explore": "Исследовать",
+  "signIn": "Войти",
+  "signUp": "Зарегистрироваться",
+  "email": "Электронная почта",
+  "password": "Пароль",
+  "name": "Имя",
+  "confirmPassword": "Подтвердите пароль",
+  "dontHaveAccount": "Нет аккаунта? Зарегистрируйтесь",
+  "alreadyHaveAccount": "Уже есть аккаунт? Войти",
+  "forgotPassword": "Забыли пароль",
+  "signInWithFacebook": "Войти через Facebook",
+  "congratulations": "Поздравляем",
+  "accountCreated": "Ваш аккаунт успешно создан.",
+  "productList": "Список товаров",
+  "yourCart": "Ваша корзина",
+  "items": "{count} товаров",
+  "checkOut": "Оформить",
+  "addToCart": "Добавить в корзину",
+  "furniture": "Мебель",
+  "electronic": "Электроника",
+  "fashion": "Мода",
+  "newCategory": "Новое",
+  "@items": {
+    "description": "Количество товаров в корзине",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "@newCategory": {
+    "description": "Категория новых товаров"
+  }
+}
